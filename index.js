@@ -38,6 +38,12 @@ async function getSheetData({ columns, packageObj }) {
   return [columns, ...rows];
 }
 
+function exportToXlsx(outputFile, wb) {
+  return new Promise(resolve => {
+    XLSX.writeFileAsync(outputFile, wb, resolve);
+  });
+}
+
 async function getPackagesReport(packageObj, config = {}) {
   try {
     if (!packageObj) {
@@ -68,7 +74,9 @@ async function getPackagesReport(packageObj, config = {}) {
     /* Add the worksheet to the workbook */
     XLSX.utils.book_append_sheet(wb, ws, ws_name);
 
-    XLSX.writeFile(wb, outputFile);
+    await exportToXlsx(outputFile, wb);
+
+    return ws_data;
   } catch (err) {
     console.error(err.message);
   }
