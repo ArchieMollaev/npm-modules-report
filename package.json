@@ -24,6 +24,6 @@
     "url": "https://github.com/ArchieMollaev/npm-modules-report"
   },
   "dependencies": {
-    "xlsx": "^0.15.5"
+    "xlsx": "0.15.5"
   }
 }
