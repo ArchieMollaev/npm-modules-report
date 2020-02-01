@@ -1,6 +1,6 @@
-# npm-modules-report - creates xlsx report based on your packages.json file
+# npm-modules-report
 
-npm-modules-report helps you to assemble all the information about npm modules inside your package.json and export it into xlsx sheet
+`npm-modules-report` helps you to assemble specific information about npm modules inside your package.json in form of table and export it as xlsx file.
 
 ## Installing
 
@@ -18,35 +18,23 @@ const packageFile = require('./package.json');
 
 const my_config = {
   sheetName: 'My packages report', // optional. Default: "Packages"
-  columns: ['author', 'name', 'description', 'license'] // optional. Default: ['name', 'description']
+  columns: ['name', 'description', 'version', 'author'] // optional. Default: ['name', 'description']
   outputFile: 'project-technologies.xlsx', // optional. Default: "packages.xlsx"
 }
 
 
-// it will create outputFile in the root of your project
+// it will create project-technologies.xlsx in the root of your project
 getPackagesReport(
   packageFile, // required
   my_config // optional
-)
+).then((output) => console.log(output)) // resolve data that has been exported
 
 ```
 
-## Example 2
+`project-technologies.xlsx` example. You can edit your report however you want in your favorite xlsx editor
+![Preview](./preview.png)
 
-```js
-...
-
-getPackagesReport(packageFile)
-  .then((output) => console.log(output))
-  /** returns data like
-   * [
-   *  ['name', 'description'],
-   *  ['npm-modules-report', 'creates xlsx report based on your packages.json file']
-   * ] **/
-
-```
-
-## NOTE: The process of export can take 1-2 minutes!
+## `NOTE`: The process of export can take 1-2 minutes!
 
 Dependencies:
 
