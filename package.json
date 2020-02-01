@@ -8,6 +8,11 @@
   },
   "author": "Artur Mollaev",
   "license": "ISC",
+  "homepage": "https://github.com/ArchieMollaev/npm-modules-report",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArchieMollaev/npm-modules-report"
+  },
   "dependencies": {
     "xlsx": "^0.15.5"
   }
