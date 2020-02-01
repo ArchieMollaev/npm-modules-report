@@ -2,6 +2,16 @@
   "name": "npm-modules-report",
   "version": "1.0.5",
   "description": "Creates xlsx report based on npm package.json file",
+  "keywords": [
+    "modules",
+    "utils",
+    "package",
+    "json",
+    "report",
+    "excel",
+    "xlsx",
+    "spreadsheet"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node ./tests/tests.js"
