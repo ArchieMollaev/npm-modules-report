@@ -4,6 +4,7 @@
   "description": "Creates xlsx report based on npm package.json file",
   "keywords": [
     "modules",
+    "description",
     "utils",
     "package",
     "json",
