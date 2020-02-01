@@ -46,15 +46,19 @@ function exportToXlsx(outputFile, wb) {
 
 async function getPackagesReport(packageObj, config = {}) {
   try {
+    console.log(
+      "\x1b[7m",
+      "NPM-MODULE-REPORT: ...processing your package.json. Please wait it may take 1-2 minutes depending on modules amount"
+    );
     if (!packageObj) {
       throw new Error(
-        'getPackagesReport: "Please provide provide package.json object!'
+        'NPM-MODULE-REPORT: "Please provide provide package.json object!'
       );
     }
 
     if (!packageObj.version) {
       throw new Error(
-        'getPackagesReport: "It does not seem like npm package.json object'
+        'NPM-MODULE-REPORT: "It does not seem like npm package.json object'
       );
     }
 
@@ -76,9 +80,11 @@ async function getPackagesReport(packageObj, config = {}) {
 
     await exportToXlsx(outputFile, wb);
 
+    console.log("\x1b[32m", "NPM-MODULE-REPORT - done successfully");
+
     return ws_data;
   } catch (err) {
-    console.error(err.message);
+    console.log("\x1b[31m", err.message);
   }
 }
 
