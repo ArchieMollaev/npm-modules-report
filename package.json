@@ -15,7 +15,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "node ./tests/tests.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Artur Mollaev",
   "license": "ISC",
@@ -26,5 +26,8 @@
   },
   "dependencies": {
     "xlsx": "0.15.5"
+  },
+  "bin": {
+    "build-npm-report": "./cli.js"
   }
 }

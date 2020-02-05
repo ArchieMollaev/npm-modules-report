@@ -10,33 +10,34 @@ Using npm:
 $ npm install npm-modules-report
 ```
 
-## Example
+## Example #1
 
 ```js
 const { getPackagesReport } = require("npm-modules-report");
-const packageFile = require('./package.json');
+const packageFile = require("./package.json");
 
-const my_config = {
-  sheetName: 'My packages report', // optional. Default: "Packages"
-  columns: ['name', 'description', 'version', 'author'] // optional. Default: ['name', 'description']
-  outputFile: 'project-technologies.xlsx', // optional. Default: "packages.xlsx"
-}
+const columns = ["name", "description", "version", "author"];
 
-
-// it will create project-technologies.xlsx in the root of your project
+// it will create npm_report folder with report.xlsx inside
 getPackagesReport(
   packageFile, // required
-  my_config // optional
-).then((output) => console.log(output)) // resolve data that has been exported
-
+  columns // optional. default ['name', 'description']
+).then(output => console.log(output)); // resolve data that has been exported
 ```
 
-`project-technologies.xlsx` example. You can edit your report however you want in your favorite xlsx editor
+`report.xlsx` example. You can edit your report however you want in your favorite xlsx editor
 ![Preview](./preview.png)
 
-## `NOTE`: The process of export can take 1-2 minutes!
+## Example #2 via terminal
+
+Just run
+
+`npx build-npm-report`
+
+or with columns names
+
+`npx build-npm-report name description version`
 
 Dependencies:
 
-- [child_process](https://nodejs.org/api/child_process.html) - nodejs native module
 - [xlsx](https://www.npmjs.com/package/xlsx) - Parser and writer for various spreadsheet formats
