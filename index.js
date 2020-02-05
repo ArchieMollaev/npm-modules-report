@@ -50,10 +50,7 @@ function exportToXlsx(outputFile, wb) {
   });
 }
 
-async function getPackagesReport(
-  packageObj,
-  columns = ["name", "description"]
-) {
+async function generateReport(packageObj, columns = ["name", "description"]) {
   try {
     console.log(
       "\x1b[7m",
@@ -97,4 +94,4 @@ async function getPackagesReport(
   }
 }
 
-module.exports = { getPackagesReport };
+module.exports = generateReport;
