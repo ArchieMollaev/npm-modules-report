@@ -1,6 +1,6 @@
 {
   "name": "npm-modules-report",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Creates xlsx report based on npm package.json file",
   "keywords": [
     "modules",
