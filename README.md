@@ -13,30 +13,31 @@ $ npm install npm-modules-report
 ## Example #1
 
 ```js
-const { getPackagesReport } = require("npm-modules-report");
+const generateReport = require("npm-modules-report");
 const packageFile = require("./package.json");
 
-const columns = ["name", "description", "version", "author"];
-
 // it will create npm_report folder with report.xlsx inside
-getPackagesReport(
+generateReport(
   packageFile, // required
-  columns // optional. default ['name', 'description']
-).then(output => console.log(output)); // resolve data that has been exported
+  ["name", "description", "version", "author"] // optional. default ['name', 'description']
+).then(output => console.log(output)); // resolves the data that has been exported
 ```
 
-`report.xlsx` example. You can edit your report however you want in your favorite xlsx editor
+`report.xlsx` example. You can then edit your file however you like in your favorite xlsx editor
+
 ![Preview](./preview.png)
 
 ## Example #2 via terminal
 
-Just run
+```bash
+npx build-npm-report
+```
 
-`npx build-npm-report`
+or with arguments
 
-or with columns names
-
-`npx build-npm-report name description version`
+```bash
+npx build-npm-report name description version
+```
 
 Dependencies:
 
